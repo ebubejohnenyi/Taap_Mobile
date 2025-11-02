@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/widget/code_container.dart';
-import 'package:mobile/widget/code_wrapper.dart';
 import 'package:mobile/widget/icon_wrapper.dart';
 
 import '../../widget/address_wrapper.dart';
@@ -31,7 +30,7 @@ class Order extends StatelessWidget {
             unselectedLabelColor: Colors.grey,
             labelStyle: Theme.of(
               context,
-            ).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.w600),
+            ).textTheme.titleSmall!.copyWith(fontWeight: FontWeight.w600),
             tabs: const [
               Tab(text: 'Pre Orders'),
               Tab(text: 'Completed Orders'),

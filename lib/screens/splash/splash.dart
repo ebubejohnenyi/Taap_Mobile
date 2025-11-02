@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:mobile/screens/account/signup.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -12,6 +11,30 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> {
   final PageController _controller = PageController();
   int _currentPage = 0;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Preload a network image
+    precacheImage(
+      NetworkImage(
+        'https://res.cloudinary.com/dmj4ntyii/image/upload/v1761287332/pump_kidliv.png',
+      ),
+      context,
+    );
+    precacheImage(
+      NetworkImage(
+        'https://res.cloudinary.com/dmj4ntyii/image/upload/v1761287398/gas_ujandz.png',
+      ),
+      context,
+    );
+    precacheImage(
+      NetworkImage(
+        'https://res.cloudinary.com/dmj4ntyii/image/upload/v1761287426/wait_wt81r5.png',
+      ),
+      context,
+    );
+  }
 
   final List<Map<String, dynamic>> splashData = [
     {

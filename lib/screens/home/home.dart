@@ -47,7 +47,7 @@ class Home extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {},
-                  child: Icon(Icons.keyboard_arrow_down_outlined),
+                  child: Icon(Icons.restart_alt_outlined, size: 20),
                 ),
               ],
             ),
@@ -86,7 +86,11 @@ class Home extends StatelessWidget {
       body: BlocBuilder<StationBloc, StationState>(
         builder: (context, state) {
           if (state is StationLoading) {
-            return CardSkeleton();
+            return SingleChildScrollView(
+              child: Column(
+                children: [CardSkeleton(), CardSkeleton(), CardSkeleton()],
+              ),
+            );
           } else if (state is StationLoaded) {
             return ListView.builder(
               padding: EdgeInsets.symmetric(horizontal: 10),

@@ -9,6 +9,7 @@ class CustomButton extends StatelessWidget {
     this.titleStyle,
     this.icon,
     this.iconColor,
+    this.isLoading,
   });
 
   final String title;
@@ -17,6 +18,7 @@ class CustomButton extends StatelessWidget {
   final TextStyle? titleStyle;
   final IconData? icon;
   final Color? iconColor;
+  final bool? isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,13 @@ class CustomButton extends StatelessWidget {
           icon != null
               ? SizedBox(width: MediaQuery.of(context).size.width * 0.01)
               : SizedBox(),
-          Text(title, style: titleStyle),
+          isLoading != null
+              ? SizedBox(
+                  height: 20,
+                  width: 20,
+                  child: CircularProgressIndicator(color: Colors.white),
+                )
+              : Text(title, style: titleStyle),
         ],
       ),
     );
