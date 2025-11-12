@@ -1,6 +1,6 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile/data/bloc/app_start/app_start_event.dart';
 import 'package:mobile/data/bloc/app_start/app_start_state.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppStartBloc extends Bloc<AppStartEvent, AppStartState> {
@@ -14,7 +14,7 @@ class AppStartBloc extends Bloc<AppStartEvent, AppStartState> {
   ) async {
     emit(AppStartLoading());
 
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 4));
 
     try {
       final prefs = await SharedPreferences.getInstance();
